@@ -1,8 +1,9 @@
+import { _throw } from 'rxjs/observable/throw';
+import { Observable } from 'rxjs/observable';
 import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs/observable';
-import { _throw } from 'rxjs/observable/throw';
 import { map, tap, catchError } from 'rxjs/operators';
 
 import { IProduct } from './product';

@@ -27,10 +27,12 @@
               <th>Product</th>
               <th>Code</th>
               <th>Available</th>
+              <th>Price</th>
+             <th>Rating</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor='let product of products'>
+            <tr *ngFor='let product of filteredProducts'>
               <td>
                 <img  *ngIf= 'showImage'
                 [src]='product.imageUrl'
@@ -38,7 +40,9 @@
                      [style.width.px]='imageWidth'
                      [style.margen.px]='imageMargin'>
                     </td>
-              <td> {{product.productName}}</td>
+              <td><a [routerLink]="['/products', product.productId]">
+                {{ product.productName }}
+            </a></td>
               <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
               <td>{{ product.releaseDate }}</td>
               <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
